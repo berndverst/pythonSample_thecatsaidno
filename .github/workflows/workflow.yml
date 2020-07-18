@@ -32,11 +32,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         deactivate
-    - uses: azure/appservice-settings@v1
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        general-settings-json: '{"WEBSITE_RUN_FROM_PACKAGE": 1}'
-      id: settings
+#     - uses: azure/appservice-settings@v1
+#       with:
+#         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+#         general-settings-json: '{"WEBSITE_RUN_FROM_PACKAGE": 1}'
+#       id: settings
     - name: Deploy Web App using GH Action azure/webapps-deploy
       uses: azure/webapps-deploy@v2
       with:
